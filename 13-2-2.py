@@ -2,7 +2,7 @@
 
 class Student:
     'contains students, email, name ...'
-    
+
     def __init__(self, name, courses, phone, email, credit):
         self.name = name
         self.courses = courses
@@ -17,10 +17,14 @@ class Student:
         print "Phone: ", self.phone
         print "Email: ", self.email
         print "Credit hours: ", self.credit
+
     def enroll(self, course):
         self.courses.append(course)
 
-credit = 0
+    credit = 0
+    def addcredit (self):
+        credit = credit + 3        
+
 students = []
 again = "yes"
 
@@ -38,7 +42,7 @@ while again != "no":
         student.enroll(newcourse)
         print "Input the courses which", student.name, "is enrolled in."
         newcourse = raw_input ("Type the course number or 'stop' ")
-        credit +=3
+        student.addcredit()
     again = raw_input ("Would you like to enter more students? ")
 
 
