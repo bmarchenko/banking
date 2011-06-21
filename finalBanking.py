@@ -21,6 +21,11 @@ class deposit: #1% a month simple interest
 
 
 choice = raw_input ("Choose type of deposit you'd like to make: simple, compound or bonus: ")
+a = ['simple', 'compound', 'bonus']
+while choice not in a:
+    print "Wrong choice!"
+    choice = raw_input ("Choose type of deposit you'd like to make: simple, compound or bonus: ")
+
 
 if choice == "simple":
         #simple interest as basic
