@@ -17,10 +17,9 @@ class Deposit:
         self.depperiod = depperiod
 
     def restrict (self):
-        self.restrict = restrict
-         
+                 
         depperiod > 6
-                   
+                
         
     def calc (self):
         self.calc = depsum*depperiod*0.01+depsum
