@@ -17,11 +17,10 @@ class Deposit:
         self.depperiod = depperiod
 
     def restrict (self):
-        global depperiod
-        while depperiod < 6:
-            print "Dear client, deposit period must be at least 6 monthes"
-            depperiod = float(raw_input ("Enter the deposit period in monthes: "))
-        
+        self.restrict = restrict
+         
+        depperiod > 6
+                   
         
     def calc (self):
         self.calc = depsum*depperiod*0.01+depsum
@@ -44,7 +43,7 @@ class BonusDeposit (Deposit):
         self.bonus = floor (depperiod/6) * depsum * 0.02
 
     def calc (self):
-        self.calc = depsum*(1.025**(depperiod*0.33)) + float(self.bonus) 
+        self.calc = depsum*(1.025**(depperiod*0.33)) + self.bonus 
 
 choice = raw_input ("Choose type of deposit you'd like to make: simple, compound or bonus: ")
 
@@ -61,24 +60,8 @@ depsum = float(raw_input ("Enter the deposit sum: "))
 depperiod = float(raw_input ("Enter the deposit period in monthes: "))
 
 
-
-
-if SimpleDeposit:
-    
-    deposit.restrict()
-    deposit.calc()             
-    deposit.printDetails()
-
-        
-elif CompDeposit:
-                            
-     deposit.restrict()    
-     deposit.calc()
-     deposit.printDetails()
-else:
-
-    deposit.bonus()
+if  deposit.restrict():
     deposit.calc()
     deposit.printDetails()
-
-
+else:
+    print "Deposit period is to be at least 6 monthes"
