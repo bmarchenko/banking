@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Deposit form</title>
+</head>
+<body>
+    {% if error %}
+        <p style="color: red;">Please accuratelly input the informatio.</p>
+    {% endif %}
+
+    <form action="/deposit-result/" method="get">
+        Please, enter your Name: <input type="text" name="name" /><br />
+        Choose deposit: <p>
+	<INPUT type="radio" name="simple" value="simple"> Simple<br />
+        <INPUT type="radio" name="compound" value="compound"> Compound<br />
+        <INPUT type="radio" name="bonus" value="bonus"> Bonus><br /> </p>
+	Enter the deposit period (moths):<input type="text" name="depperiod" /><br />
+	Enter the deposit sum (UAH): <input type="text" name="depsum" /><br />
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
