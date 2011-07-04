@@ -1,0 +1,6 @@
+{% if name, depperiod, depsum %}
+    <p>Dear {{name}}the deposit sum after {{depperiod}} will be {{finaldep}} UAH</p>
+
+{% else %}
+    <p>Something wrong with your request.</p>
+{% endif %}
