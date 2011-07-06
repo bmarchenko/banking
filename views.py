@@ -12,12 +12,15 @@ def deposit_result(request):
     deptype = request.POST['deptype']
 
     deposit = Deposit(name, depperiod, depsum)
+    
     if deptype == 'simple':
         depfinal = deposit.simplecalc()
-    elif deptype = 'compound':
+    
+    elif deptype == 'compound':
         depfinal = deposit.compcalc()
+        
     else:
-        depfinal = deposit.bonuscalc()
+        depfinal == deposit.bonuscalc()
 
     return render_to_response('deposit_result.html', 
 {'name' : name, 'depperiod' : depperiod, 'deptype' : deptype, 'depfinal' : depfinal }
