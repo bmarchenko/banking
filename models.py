@@ -5,30 +5,16 @@ class Deposit(models.Model):
     depsum = models.CharField(max_length=30)
     depperiod = models.CharField(max_length=30)
     
+    def simplecalc (self):
+        self.simplecalc = depperiod*0.01*depsum+depsum
 
-    def restrict (self):
-                 
-        depperiod > 6
+    def compcalc (self):
+        self.compcalc = depsum*(1.025**(depperiod*0.33))
 
-    
-    def calc (self):
-        self.calc = depsum*depperiod*0.01+depsum
+    def bonuscalc (self):
+        self.calc = depsum*(1.025**(depperiod*0.33)) + floor (depperiod/6) * depsum * 0.02
 
     def __unicode__(self):
         return u'%s %s %s %s' % (self.name, self.depsum, self.depperiod, self.deptype)
 
-class SimpleDeposit (Deposit):
-                pass
-
-class CompDeposit (Deposit):
-      def calc (self):
-        self.calc = depsum*(1.025**(depperiod*0.33))
-
-class BonusDeposit (Deposit):
-
-    def bonus (self):
-        self.bonus = floor (depperiod/6) * depsum * 0.02
-
-    def calc (self):
-        self.calc = depsum*(1.025**(depperiod*0.33)) + self.bonus
 
