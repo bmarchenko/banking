@@ -1,5 +1,4 @@
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
 from mysite.books.models import Deposit
 
 def deposit_form(request):
@@ -10,9 +9,8 @@ def deposit_result(request):
     depperiod = request.POST['depperiod']
     depsum = request.POST['depsum']
     deptype = request.POST['deptype']
-
-    deposit = Deposit(name, depperiod, depsum)
     
+    deposit = Deposit(name, depperiod, depsum)
     if deptype == 'simple':
         depfinal = deposit.simplecalc()
     
@@ -21,7 +19,7 @@ def deposit_result(request):
         
     else:
         depfinal == deposit.bonuscalc()
-
+  
     return render_to_response('deposit_result.html', 
 {'name' : name, 'depperiod' : depperiod, 'deptype' : deptype, 'depfinal' : depfinal }
 		) 

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Deposit Form - {{block.super}}{% endblock %}
+{% block content %}
+
+    <form action="/deposit-result/" method="post">
+        Please, enter your Name: <input type="text" name="name" /><br />
+        Choose deposit: <p>
+	<INPUT type="radio" name="deptype" value="simple"> Simple<br />
+        <INPUT type="radio" name="deptype" value="compound"> Compound<br />
+        <INPUT type="radio" name="deptype" value="bonus"> Bonus<br /> </p>
+	Enter the deposit period (moths):<input type="text" name="depperiod" /><br />
+	Enter the deposit sum (UAH): <input type="text" name="depsum" /><br />
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+
