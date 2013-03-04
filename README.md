@@ -1,0 +1,1 @@
+This is a simple application that allows to calculate banking deposits.
